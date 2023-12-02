@@ -11,3 +11,11 @@
  
  
  ]
+
+ NameError: name 'lottery_numbers' is not defined
+>>> lottery_nums = [2, 5, 23, 20458, 334, 333]
+>>> sorted(lottery_nums)
+[2, 5, 23, 333, 334, 20458]
+>>> lottery_nums.sort()
+>>> lottery_nums
+[2, 5, 23, 333, 334, 20458]
