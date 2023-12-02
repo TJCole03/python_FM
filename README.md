@@ -19,3 +19,14 @@
 >>> lottery_nums.sort()
 >>> lottery_nums
 [2, 5, 23, 333, 334, 20458]
+
+>>> lottery_nums.append(98, 5000000)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: list.append() takes exactly one argument (2 given)
+>>> lottery_nums.append(98)
+>>> lottery_nums.append(5000000)
+>>> lottery_nums
+[2, 5, 23, 333, 334, 20458, 98, 5000000]
+>>> sorted(lottery_nums)
+[2, 5, 23, 98, 333, 334, 20458, 5000000]
