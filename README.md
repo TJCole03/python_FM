@@ -30,3 +30,15 @@ TypeError: list.append() takes exactly one argument (2 given)
 [2, 5, 23, 333, 334, 20458, 98, 5000000]
 >>> sorted(lottery_nums)
 [2, 5, 23, 98, 333, 334, 20458, 5000000]
+
+>>> lottery_nums.insert(0, 24)
+>>> lottery_nums)
+  File "<stdin>", line 1
+    lottery_nums)
+                ^
+SyntaxError: unmatched ')'
+>>> lottery_nums
+[24, 2, 5, 23, 333, 334, 20458, 98, 5000000]
+>>> lottery_nums.sort()
+>>> lottery_nums
+[2, 5, 23, 24, 98, 333, 334, 20458, 5000000]
