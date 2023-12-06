@@ -90,3 +90,66 @@ isalpha() method of builtins.str instance
     
     A string is alphabetic if all characters in the string are alphabetic and there
     is at least one character in the string.
+
+NUMBERS
+min(), max(), round()
+
+IN PYTHON, EVERYTHING UNDER THE HOOD IS AN OBJECT
+
+STRINGS
+    >>> >>> a_long_st = """
+... a
+... long
+... long
+... long
+... long
+... long 
+... long 
+... long 
+... loooooooong
+... ass 
+... string
+... """
+>>> a_long_st
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'a_long_st' is not defined. Did you mean: 'a_long_string'?
+>>> a_long_string
+'\na\nlong\nlong\nlong\nlong\nlong \nlong \nlong \nloooooooong\nass \nstring\n'
+>>> print(a_long_string)
+
+a
+long
+long
+long
+long
+long 
+long 
+long 
+loooooooong
+ass 
+string
+^^^^
+not how pythog stores it under the hood
+
+can print out strings, variables, and multiples things as long as theyere
+    separated by commas
+
+
+f strings again
+    >>> f"hey"
+'hey'
+>>> f"hey {superman}"
+'hey 8484'
+>>> 
+'hey 8484'
+>>> name = "Spider-Man"
+>>> name.replace("Sp", "P")
+'Pider-Man'
+>>> name
+'Spider-Man'
+>>> new = name.replace("Sp", "P")
+>>> new
+'Pider-Man'
+>>> name
+'Spider-Man'
