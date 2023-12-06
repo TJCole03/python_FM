@@ -42,3 +42,22 @@ SyntaxError: unmatched ')'
 >>> lottery_nums.sort()
 >>> lottery_nums
 [2, 5, 23, 24, 98, 333, 334, 20458, 5000000]
+
+METHODS HAD DEF KEYWORD IN FRONT OF THEM
+
+When we start a python program from the command line, the entry point will be something like: 
+    if __name__ === "__main__":
+
+F STRINGS: 
+    strings with built-in formatting; 
+    allows us to provide variables inside curlybraces and the representations gets
+        inserted right into the string
+        f"stars:>{min_stars}"
+
+    in example: 
+        starts with base of query, loop through every language in list of languages
+        and then append onto the query  a string like: 
+            query += f"language:{language}"
+
+R STRINGS: REGULAR EXPRESSION 
+B STRINGS: BYTE STRINGS 
