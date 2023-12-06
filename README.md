@@ -61,3 +61,19 @@ F STRINGS:
 
 R STRINGS: REGULAR EXPRESSION 
 B STRINGS: BYTE STRINGS 
+
+python_variables_should_look_like_this
+
+it_is_called_snake_casing
+
+special keywords in python you cannot use
+    - if 
+    - list () 
+
+>>> list()
+[]
+>>> list = 'hey'
+>>> list()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'str' object is not callable
