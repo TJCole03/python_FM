@@ -3,6 +3,10 @@
 - variables and data types: 
     - dont name your variables things like int, str, list, etc... 
     -helpful REPL meethods, help() type() and dir()
+
+>>> superman = 8484
+>>> type(superman)
+<class 'int'>
 - >>> dir(str)
 ['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__',
     ---DOUBLE UNDERSCORED ONES ARE INTERNAL METHODS THAT AREN'T MEANT TO BE USED (USUALLY)
@@ -69,6 +73,7 @@ it_is_called_snake_casing
 special keywords in python you cannot use
     - if 
     - list () 
+    - str
 
 >>> list()
 []
@@ -77,3 +82,11 @@ special keywords in python you cannot use
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 TypeError: 'str' object is not callable
+
+>>> string = 'hella'
+>>> help(string.isalpha)
+isalpha() method of builtins.str instance
+    Return True if the string is an alphabetic string, False otherwise.
+    
+    A string is alphabetic if all characters in the string are alphabetic and there
+    is at least one character in the string.
