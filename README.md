@@ -187,3 +187,138 @@ WE USE HELPER FUNCTIONS TO DIAGNOSE AND SOLVE PROBLEMS
     - type(), dir(), str()
 
 - strings can have 'single' or "double" quotes
+
+TUPLES
+    - lightweight collections that keep track of different but related items
+        - Pokeballs; pokeball, great ball, ultra, etc
+    - in comparison: lists contain items that are all similar in nature
+    - once you initialize/create a tuple, it'll be IMMUTABLE (unlike a list)
+        -can't push, can't pop, can't do anything
+    - they're sorted so they have an order to how they're stored
+    - Tuples hold data and information securely; 
+        - one good use is storing information in a row in a spreadsheet
+    - 
+>>> # list []
+>>> # tuple () 
+>>> ()
+()
+>>> my_tup = ()
+>>> type(my_tup)
+<class 'tuple'>
+>>> my_tup = ('hulk')
+>>> type(my_tup)
+<class 'str'>
+    - why is it a string? 
+        - python REPL doensn't recognize the syntax the same way JS would
+        - need a comma
+>>> # tuple (,)
+>>> (1,)
+(1,)
+>>> ('hulk',)
+('hulk',)
+>>> my_tup = ('hulk',)
+>>> type(my_tup)
+<class 'tuple'>
+
+>>> student = ('billy', 7, 'detention', 0.5)
+>>> student[3]
+0.5
+>>> billy
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'billy' is not defined
+>>> 'billy'
+'billy'
+>>> student[1] = 10
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'tuple' object does not support item assignment
+
+>>> student
+('billy', 7, 'detention', 0.5)
+>>> name, age, class, gpa = student
+  File "<stdin>", line 1
+    name, age, class, gpa = student
+               ^^^^^
+SyntaxError: invalid syntax
+>>> name, age, subject, gpa = student
+>>> name
+'billy'
+>>> age
+7
+>>> subject
+'detention'
+>>> gpa
+0.5
+
+SETS
+    - Mutable data types that only allow storage on immutable items in unsorted way
+    - CANNOT CONTAIN: lists, dictionaries, other sets
+    - Can ONLY contain unique items within them
+        - benefit is speed
+    - 
+
+>>> type({1,2})
+<class 'set'>
+>>> my_set = {}
+>>> type(my_set)
+<class 'dict'>
+>>> type(set())
+<class 'set'>
+>>> type({3})
+<class 'set'>
+>>> type({3, 3, 4})
+<class 'set'>
+>>> my_set
+{}
+>>> >>> my_set = {3, 4, 3}
+  File "<stdin>", line 1
+    my_set = {3, 4,, 4, 3}
+                   ^
+SyntaxError: invalid syntax
+>>> my_set = {3,4,3}
+>>> type(my_set)
+<class 'set'>
+>>> my_set
+{3, 4}
+>>> 
+>>> # shortcut to check for mutability
+>>> # hash()
+>>> hash(4)
+4
+>>> hash("name")
+-4814052813746128978
+>>> hash([])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: unhashable type: 'list'
+
+if you see this exceptions like this, read them from the bottom up and consider where else you could've seen it
+
+SETS ARE UNORDERED
+    >>> my_set = {"a", 1, 2, 4, "TJ"}
+    >>> my_set
+    {1, 2, 4, 'a', 'TJ'}
+
+    >>> my_set
+{1, 2, 4, 'a', 'TJ'}
+>>> my_set.add("yayy")
+>>> my_set
+{1, 2, 4, 'a', 'TJ', 'yayy'}
+>>> my_set.discard(2)
+>>> my_set
+{1, 4, 'a', 'TJ', 'yayy'}
+>>> colors = {'red', 'orange'}
+>>> numbers = {4,2,0,6,9}
+>>> colors.update(numbers)
+>>> colors
+{0, 'orange', 2, 4, 6, 9, 'red'}
+
+
+DICTIONARIES
+    - data types that allow us to store key-value pairs
+    - mutable; but just like sets, dictionary KEYS need to be immutable
+    - CANNOT HAVE LIST AS KEY IN DICTIONARY BECAUSE LIST IS MUTABLE
+    - CAN HAVE TUPLE BECAUSE TUPLES ARE IMMUTABLE
+
+
