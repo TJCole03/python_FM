@@ -153,3 +153,21 @@ f strings again
 'Pider-Man'
 >>> name
 'Spider-Man'
+
+>>> list()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'str' object is not callable
+>>> []
+[]
+>>> type([])
+<class 'list'>
+>>> names = ['bob', 'joe', 'bill']
+>>> names
+['bob', 'joe', 'bill']
+
+>>> names[1]
+'joe'
+>>> names[1] = 'vinny'
+>>> names
+['bob', 'vinny', 'bill']
