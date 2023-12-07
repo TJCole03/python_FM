@@ -171,3 +171,19 @@ TypeError: 'str' object is not callable
 >>> names[1] = 'vinny'
 >>> names
 ['bob', 'vinny', 'bill']
+>>> f"I am {names[1]}{12/2}"
+'I am vinny6.0'
+>>> names.append("Mickey")
+>>> names
+['bob', 'vinny', 'bill', 'Mickey']
+>>> names.pop
+<built-in method pop of list object at 0x104a557c0>
+>>> names.pop()
+'Mickey'
+>>> names
+['bob', 'vinny', 'bill']
+
+WE USE HELPER FUNCTIONS TO DIAGNOSE AND SOLVE PROBLEMS
+    - type(), dir(), str()
+
+- strings can have 'single' or "double" quotes
