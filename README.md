@@ -318,7 +318,75 @@ SETS ARE UNORDERED
 DICTIONARIES
     - data types that allow us to store key-value pairs
     - mutable; but just like sets, dictionary KEYS need to be immutable
+    - fast item lookup, fast membership testing
+        - why? dictionary keys must be HASHABLE 
     - CANNOT HAVE LIST AS KEY IN DICTIONARY BECAUSE LIST IS MUTABLE
+    - CANNOT HAVE MUTABLE DATATYPES IN DICTIONARIES
     - CAN HAVE TUPLE BECAUSE TUPLES ARE IMMUTABLE
+    - DICTIONARIES DO NOT HAVE AN ORDER
+    - TO ACCESS ITEMS IN DICTIONARY, PROVIDE KEY AND USE SQUARE BRACKETS
+    - IF I WANTED TO GET SOMETHING FROM MY DICTIONARY AND NOT DEAL WITH AN EXCEPTION THAT I THEN HAVE TO CATCH, I CAN USE GET METHOD
+    - DICTIONARIES CAN HAVE LISTS AS VALUES
+
+>>> # dictionaries
+>>> {1,2,3}
+{1, 2, 3}
+>>> # dictionary {:}
+>>> type({})
+<class 'dict'>
+>>> {"one": 1, "two": 2}
+{'one': 1, 'two': 2}
+>>> my_dict = {"one": 1, "two": 2}
+>>> type(my_dict)
+<class 'dict'>
+>>> my_number = {"one": [1, 1, 1]}
+>>> {'one': 1, 'two': 2}
+{'one': 1, 'two': 2}
+>>> my_dict[0]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyError: 0
+>>> my_dict("one")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'dict' object is not callable
+>>> my_dict["one"]
+1
+>>> my_dict
+{'one': 1, 'two': 2}
+>>> my_dict.get("three", "default")
+'default'
+>>> my_dict.get("three")
+>>> my_dict.get("two", "default")
+2
+>>> my_dict
+{'one': 1, 'two': 2}
+>>> my_dict["two"] = 'wqjahrenovf'
+>>> my_dict["three"] = 3
+>>> my_dict
+{'one': 1, 'two': 'wqjahrenovf', 'three': 3}
+>>> my_nums = {"one": [1, 1, 1]}
+>>> my_nums["one"]
+[1, 1, 1]
+>>> my_nums["one"].append([1, 1, 1])
+>>> my_nums
+>>> my_nums
+{'one': [1, 1, 1, [1, 1, 1]]}
+>>> my_dict
+{'one': 1, 'two': 'wqjahrenovf', 'three': 3}
+>>> my_nums
+{'one': [1, 1, 1, [1, 1, 1]]}
+>>> type(my_nums["one"])
+<class 'list'>
+>>> my_nums
+{'one': [1, 1, 1, [1, 1, 1]]}
+>>> my_dict.keys()
+dict_keys(['one', 'two', 'three'])
+>>> my_dict.values()
+dict_values([1, 'wqjahrenovf', 3])
+>>> my_dict.items()    
 
 
+
+
+LISTS, SETS, AND DICTIONARIES ARE MUTABLE!!
