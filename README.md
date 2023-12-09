@@ -445,3 +445,123 @@ bonjour ['planet earth', 'monde', 'mundo']!
  21,
  22,
  23,
+
+ FUNCTIONS; 
+    - 'def' keyword
+        - everything that's indented in that functions belongs to that function 
+    - NO CURLY BRACES
+    - def my_func():
+        print("Hi")
+    my_func (calling the function)
+    can save function into variable but would have to redefine the funciton and have it return the value instead of printing it. it'll return the string and NOW we can save that to a variable
+    >>> def my_func():
+...     print("Hi")
+... 
+>>> my_func()
+Hi
+>>> greeting = my_func()
+Hi
+>>> type(greeting)
+<class 'NoneType'>
+>>> def my_func():
+...     return "hi"
+... 
+>>> my_func()
+'hi'
+>>> greeting =  my_func()
+>>> greeting 
+'hi'
+
+>>> def add_numbers(x, y):
+...     return x + y
+... 
+>>> add_numbers(2, 5)
+7
+>>> result = add_numbers(10, 20)
+>>> result
+30
+>>> add_numbers(x, y, z=1):
+  File "<stdin>", line 1
+    add_numbers(x, y, z=1):
+                          ^
+SyntaxError: invalid syntax
+>>> def add_numbers(x, y, z=1):
+...     return x + y + z
+... 
+>>> add_numbers(4, 2)
+7
+>>> add_numbers(90, 4)
+95
+>>> add_numbers(3, 6, 6)
+15
+
+>>> def create_query(language="JavaScript", num_stars=10, sort="desc"):
+...     return f"language: {language}, num_stars is {num_stars}, sort is {sort}"
+... 
+>>> create_query()
+'language: JavaScript, num_stars is 10, sort is desc'
+>>> create_query(language="python")
+'language: python, num_stars is 10, sort is desc'
+>>> create_query(num_stars=20)
+'language: JavaScript, num_stars is 20, sort is desc'
+
+DONT USE MUTABLE TYPES AS DEFAULT ARGUMENTS 
+DONT USE MUTABLE TYPES AS DEFAULT ARGUMENTS 
+DONT USE MUTABLE TYPES AS DEFAULY ARGUMENTS
+
+HERE'S WHY: 
+>>> def do_stuff(my_list=[]):
+...     my_list.append("stuff!")
+...     return my_list
+... 
+>>> do_stuff()
+['stuff!']
+>>> do_stuff()
+['stuff!', 'stuff!']
+>>> do_stuff()
+['stuff!', 'stuff!', 'stuff!']
+>>> do_stuff()
+['stuff!', 'stuff!', 'stuff!', 'stuff!']
+
+The way python works under the hood, my_list=[] gets declared once. if you use my_list=[], you will continue to get the same instance of my_list=[] every time you call that function.
+
+NO MUTABLE DEFAULT ARGUMENTS!!!!
+
+DO THIS INSTEAD: 
+
+>>> def do_stuff(my_list=None):
+...     if my_list == None:
+...             my_list = []
+...             my_list.append("Winner chicken dinner")
+...     return my_list
+... 
+>>> do_stuff()
+['Winner chicken dinner']
+>>> do_stuff()
+['Winner chicken dinner']
+>>> do_stuff()
+
+>>> def print_name(name):
+...     print(name)
+... 
+>>> print_name("TJ")
+TJ
+>>> name
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'name' is not defined
+>>> name = "TJ"
+>>> print(f"name outside function: {name}")
+name outside function: TJ
+>>> 
+>>> def try_change_name():
+...     name = "max"
+...     print(f"name INSIDE of function: {name}")
+... 
+>>> try_change_name()
+name INSIDE of function: max
+>>> name
+'TJ'
+
+DONT TRY CHANING VARIABLES IN A FUNCTION THAT WERE DECLARED OUTSIDE OF IT
+    
