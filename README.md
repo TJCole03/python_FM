@@ -390,3 +390,58 @@ dict_values([1, 'wqjahrenovf', 3])
 
 
 LISTS, SETS, AND DICTIONARIES ARE MUTABLE!!
+
+type_your_stuff_like_this kepe files names SHORT
+
+python files need to end in .py
+
+NO CAMEL-CASE, ALL CAPS, OR LONG-ASS NAMES
+
+.gitignore for +_pyc
+PYC files: compiled intermediary files for optimization; 
+
+(env) timothycole@Timothys-MacBook-Pro python-workshop-frontend-masters % ls
+README.md       env             hello.py        project.py      tictactoe
+(env) timothycole@Timothys-MacBook-Pro python-workshop-frontend-masters % cat hello.py
+# in file: hello.py
+
+greetings = ['hello', 'bonjour', 'hola']
+worlds = ['planet earth', 'monde', 'mundo']
+
+for greeting in greetings:
+    print(f'{greeting} {worlds}!')
+(env) timothycole@Timothys-MacBook-Pro python-workshop-frontend-masters % hello.py
+zsh: command not found: hello.py
+(env) timothycole@Timothys-MacBook-Pro python-workshop-frontend-masters % python hello.py
+hello ['planet earth', 'monde', 'mundo']!
+bonjour ['planet earth', 'monde', 'mundo']!
+
+>>> long_list= list(range(25))
+>>> long_list
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
+>>> from pprint import pprint
+>>> pprint(long_list)
+[0,
+ 1,
+ 2,
+ 3,
+ 4,
+ 5,
+ 6,
+ 7,
+ 8,
+ 9,
+ 10,
+ 11,
+ 12,
+ 13,
+ 14,
+ 15,
+ 16,
+ 17,
+ 18,
+ 19,
+ 20,
+ 21,
+ 22,
+ 23,
