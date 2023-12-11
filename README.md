@@ -859,3 +859,70 @@ TypeError: 'set' object does not support item assignment
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 TypeError: 'set' object does not support item assignment
+
+>>> hash(5)
+5
+>>> hash(hi)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'hi' is not defined
+>>> hash('hi')
+4933047920458786035
+>>> hash('hi')
+4933047920458786035
+>>> hash("hi")
+4933047920458786035
+>>> 
+>>> ()
+()
+>>> type(())
+<class 'tuple'>
+>>> (1)
+1
+>>> type(1)
+<class 'int'>
+>>> type((1))
+<class 'int'>
+>>> (1,)
+(1,)
+>>> type((1,))
+<class 'tuple'>
+
+>>> student = ("John", 8, "math", 2.5)
+>>> name, age, subject, gpa = student
+>>> name
+'John'
+>>> age
+8
+>>> gpa
+2.5
+>>> subject
+'math'
+>>> type(student)
+<class 'tuple'>
+
+>>> my_dict = {"name": "bob", "age": 112, "occupation": "demolition", "John": "Deere"}
+>>> my_dict 
+{'name': 'bob', 'age': 112, 'occupation': 'demolition', 'John': 'Deere'}
+>>> my_dict[1]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyError: 1
+>>> my_dict["age"]
+112
+
+>>> my_dict["key"] = "a new value"
+>>> my_dict
+{'name': 'bob', 'age': 112, 'occupation': 'demolition', 'John': 'Deere', 'key': 'a new value'}
+>>> "key" in my_dict
+True
+>>> "not a key" in my_dict
+False
+>>> my_list = ['bing', 'bang', 'bong']
+>>> my_list[2] = 'boom'
+>>> my_list
+['bing', 'bang', 'boom']
+>>> my_dict['key'] = 'some other value'
+>>> my_dict
+{'name': 'bob', 'age': 112, 'occupation': 'demolition', 'John': 'Deere', 'key': 'some other value'}
+>>> 
