@@ -564,4 +564,147 @@ name INSIDE of function: max
 'TJ'
 
 DONT TRY CHANING VARIABLES IN A FUNCTION THAT WERE DECLARED OUTSIDE OF IT
+
+BOOLEANS 
+
+    - list, tuple, set, dict
+    - empty containers evaluate to false, containers with items eval to true
+    - 0 is False, all other numbers are true (including negative)
+    - 
+    - bool: used to figure out the truthiness your expression has
+        - bool maps to the constructor for the built in true or false
+    -
+    >> 3 < 5
+True
+>>> 5 < 3
+False
+>>> bool 
+<class 'bool'>
+>>> bool(0)
+False
+>>> bool(1)
+True
+>>> bool(3 < 5)
+True
+>>> bool([])
+False
+
+>>> list1 = [1, 2, 3]
+>>> list2 = [1, 2, 3]
+>>> list1 == list2
+True
+>>> list1 is list2 # checks for identity: do they point to the same place in MEMORY?
+False (they're stored at different variables)
+
+- in order to check for equality, with these keywords, we want to use the is keyword to check for identity- do they point to the same place in memory? 
+- handy with None because an empty list evauates to false
+
+>>> bool(None)
+False
+>>> bool([])
+False
+>>> x = None
+>>> is x None
+  File "<stdin>", line 1
+    is x None
+    ^^
+SyntaxError: invalid syntax
+>>> x is None
+True
+>>> [] is None
+False
+>>> # dont do a == True
+>>> a = True
+>>> a is True
+True
+>>> # Python has and, or not
+>>> # none of this: NOT, &&, ||
+>>> a = True
+>>> b = True
+>>> a and b
+True
+>>> True and False
+False
+>>> True or False
+True
+>>> True or True
+True
+>>> False or False
+False
+>>> False
+False
+>>> a
+True
+>>> not a
+False
+>>> True and (True or False)
+True
+>>> if 3 < 5: 
+...     print("hi")
+... 
+hi
+>>> if 3 > 5: 
+...     print("hi")
+...
+
+>>> if 3 < 5
+  File "<stdin>", line 1
+    if 3 < 5
+            ^
+SyntaxError: expected ':'
+>>> if 3 < 5
+  File "<stdin>", line 1
+    if 3 < 5
+            ^
+SyntaxError: expected ':'
+>>> if 3 < 5: 
+...     print("hi")
+... 
+hi
+>>> if 3 > 5: 
+...     print("hi")
+... 
+>>> a = True
+>>> b = False
+>>> if not b:
+...     print("hi")
+... 
+hi
+>>> if not a: 
+...     pring("hi")
+... 
+>>> if []:
+... 
+  File "<stdin>", line 2
     
+    ^
+>>> if [1, 2]:
+...     print('hi')
+... 
+hi
+>>> b = []
+>>> if b:
+...     print("HI")
+... 
+>>> if b == True # dont do this!
+  File "<stdin>", line 1
+    if b == True # dont do this!
+                 ^^^^^^^^^^^^^^^
+SyntaxError: expected ':'
+>>> if b == True: # dont do this!
+... 
+  File "<stdin>", line 2
+    
+    ^
+IndentationError: expected an indented block after 'if' statement on line 1
+>>> if b == True: # dont do this!
+...     print("HI")
+... 
+>>> if 5 < 3:
+...     print("HI")
+... else:
+...     print("bye"
+... )
+... 
+bye
+>>> 
