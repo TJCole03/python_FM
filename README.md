@@ -926,3 +926,47 @@ False
 >>> my_dict
 {'name': 'bob', 'age': 112, 'occupation': 'demolition', 'John': 'Deere', 'key': 'some other value'}
 >>> 
+
+>>> def add_numbers(x, y):
+...     return x + y
+... 
+>>> def multiply(a, b)
+  File "<stdin>", line 1
+    def multiply(a, b)
+                      ^
+SyntaxError: expected ':'
+>>> def multiply(a, b):
+...     return a * b
+... 
+>>> multiple(4, 5)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'multiple' is not defined. Did you mean: 'multiply'?
+>>> multiply(4, 5)
+20
+>>> add_numbers(1, 2479)
+2480
+
+>>> ## using string formatting to get more fancy
+>>> print(f"Michael Phelps eats {multiply(10, 1000)} per day so he maintains his weight")
+Michael Phelps eats 10000 per day so he maintains his weight
+>>> print(f"Michael Phelps eats {multiply(10, 1000)} calories  per day so he maintains his weight")
+Michael Phelps eats 10000 calories  per day so he maintains his weight
+
+>>> x = 12
+>>> y = 13
+>>> >>> def add_numbers(x, y):
+... 
+  File "<stdin>", line 2
+    
+    ^
+IndentationError: expected an indented block after function definition on line 1
+>>> def add_numbers(x, y):
+...     print(f"Inside the function, x = {x} and y = {y}")
+...     return x + y
+... 
+>>> print(f"outside the function, x = {x} and y = {y}")
+outside the function, x = 12 and y = 13
+>>> print(f"The sum of 5 and 6 is {add_numbers(5, 6)}")
+Inside the function, x = 5 and y = 6
+The sum of 5 and 6 is 11
