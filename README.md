@@ -708,3 +708,154 @@ IndentationError: expected an indented block after 'if' statement on line 1
 ... 
 bye
 >>> 
+
+PRACTICE TIME 
+
+SETS 
+
+>>> # create empty set
+>>> my_set = {}
+>>> type(my_set)
+<class 'dict'>
+>>> # {} make dictionaries {} make dictionaries {} make dicts
+>>> my_set = set()
+>>> # () makes sets
+>>> type(my_set)
+<class 'set'>
+>>> # creating non-empty set
+>>> my_set = {1, 2, 3}
+>>> # can add and remove items from set
+>>> my_set.add(4)
+>>> my_set.remove(2)
+>>> my_set 
+{1, 3, 4}
+>>> 2 in my_set
+False
+>>> # unlike lists, every item in a set must be unique; every item in a set must be unique. every item in a set must be unique
+>>> my_set
+{1, 3, 4}
+>>> my_set.add(3)
+>>> my_set
+{1, 3, 4}
+>>> # see? nothing added since it isnt unique
+>>> other_set = {1, 2, 3}
+>>> # can combine two sets
+>>> my_set.union(other_set)
+{1, 2, 3, 4}
+>>> # can get intersection of two sets
+>>> my_set.intersection(other_set)
+{1, 3}
+
+TUPLES
+>>> my_tuple = 1
+>>> my_tuple
+1
+>>> # lets add to the tuple
+>>> my_tuple[1] = 2
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'int' object does not support item assignment
+>>> # doesn't work because tuples are immutable; canot change them once they've been created
+>>> # great for moving data around in a lightweight way 
+>>> # can unpack them easily into multiple variables
+>>> person = ('Jim', 29, 'Austin, TX')
+>>> name, age, hometown = person
+>>> name
+'Jim'
+>>> age 
+29
+>>> hometown
+'Austin, TX'
+>>> person.add('Drums')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'tuple' object has no attribute 'add'
+>>> type(person)
+<class 'tuple'>
+
+
+DICTIONARIES
+>>> my_dict = {"key": "value":}
+  File "<stdin>", line 1
+    my_dict = {"key": "value":}
+                             ^
+SyntaxError: invalid syntax
+>>> my_dict = {"key": "value"}
+>>> # dictionaries DO NOT HAVE nuerical indexes, dicts don't have numberical indexes, dicts dont have numerical indexes
+>>> # if we try using an index number, we get a KeyError
+>>> UNLESS 0 happens to be a key
+  File "<stdin>", line 1
+    UNLESS 0 happens to be a key
+           ^
+SyntaxError: invalid syntax
+>>> my_dict[0]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyError: 0
+>>> my_dict["hola"] = "mundo"
+>>> my_dict["foo"] = "bar"
+>>> my_dict
+{'key': 'value', 'hola': 'mundo', 'foo': 'bar'}
+>>> # what is the value for 'hola'?
+>>> my_dict['hola']
+'mundo'
+>>> #can also use get() get get a key
+>>> my_dict.get('hola')
+'mundo'
+>>> my_dict['baz']
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyError: 'baz'
+>>> my_dict["baz"]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyError: 'baz'
+>>> 
+>>> # we get KeyError when the key we're searching for doesn't exist
+>>> "baz
+  File "<stdin>", line 1
+    "baz
+    ^
+SyntaxError: unterminated string literal (detected at line 1)
+>>> 'baz' in my_dict
+False
+>>> # or we can use a defauly value; if 'baz' doesn't exist, return 'default response':
+>>> my_dict.get('baz', 'default response')
+'default response'
+>>> # separating dictionary into list of keys
+>>> my_dict.keys()
+dict_keys(['key', 'hola', 'foo'])
+>>> my_dict.values()
+dict_values(['value', 'mundo', 'bar'])
+>>> # items() for when we want to get both key and value pairs; gets list of tuples; items() for getting both key and value pairs to get a list of tuples; items() to get both key/value pairs, returns a tuple
+>>> my_dict.items()
+dict_items([('key', 'value'), ('hola', 'mundo'), ('foo', 'bar')])
+>>> 
+
+MUTABILITY
+
+>>> # lists are mutable; lists are mutable; lists are mutable
+>>> my_list = [1, 2, 3]
+>>> my_list[0] = 'a'
+>>> my_list
+['a', 2, 3]
+>>> #dictionaries are mutable; dicts are mutable; dicts are mutable
+>>> my_dict = {"sup": "dude"}
+>>> my_dict["foo"] = "bar"
+>>> my_dict
+{'sup': 'dude', 'foo': 'bar'}
+>>> # sets are mutable, sets are mutable. sets are mutable
+>>> my_set = {1, 2, 3}
+>>> my_set[0] = 'a'
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'set' object does not support item assignment
+>>> my_set.add('a')
+>>> my_set
+{1, 2, 3, 'a'}
+>>> # tuples are immutable. tuples are immutable. tuples are immutable
+>>> my_tuple = {1, 2, 3}
+>>> my_tuple[0] = 'a'
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'set' object does not support item assignment
