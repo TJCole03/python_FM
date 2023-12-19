@@ -1,0 +1,34 @@
+[{
+		"name": "New York",
+		"pop": 8550405
+	},
+	{
+		"name": "Los Angeles",
+		"pop": 3971883
+	},
+	{
+		"name": "Chicago",
+		"pop": 2720546
+	},
+	{
+		"name": "Houston",
+		"pop": 2296224
+	},
+	{
+		"name": "Philadelphia",
+		"pop": 1567442
+	}
+]
+
+/ import json
+// >>> with open("cities.json") as cities_file:
+// ...     cities_data = json.load(cities_file)
+// ...     print(cities_data)
+// ... 
+// [{'name': 'New York', 'pop': 8550405}, {'name': 'Los Angeles', 'pop': 3971883}, {'name': 'Chicago', 'pop': 2720546}, {'name': 'Houston', 'pop': 2296224}, {'name': 'Philadelphia', 'pop': 1567442}]
+// >>> type(cities_data)
+// <class 'list'>
+// >>> type(cities_data[0])
+// <class 'dict'>
+
+//This returns a list of dictionarires m=that matcehs to the json file
