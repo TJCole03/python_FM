@@ -16,9 +16,9 @@ print(my_string[-1])
 
 my_list = ['h', 'e', 'l', 'l', 'o', '!']
 print('my_list', len(my_list))
-print('4:6', len(my_list[4:6]))
-print('4:', len(my_list[4:]))
-print('-2', len(my_list[-2]))
+print('4:6', (my_list[4:6]))
+print('4:', (my_list[4:]))
+print('-2', (my_list[-2:]))
 
 # my_list 6
 # 4:6 2
