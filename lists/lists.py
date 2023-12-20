@@ -69,4 +69,3 @@ for num in gen_exp:
 # num: 64
 
 #GENERATORS ARE A ONCE AND DONE TYPE OF DEAL
-
