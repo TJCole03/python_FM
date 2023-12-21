@@ -54,3 +54,56 @@ print(scores)
 for name, score in zip(names, scores):
     print(f"{name} got a score of {score}")
 
+# [4, 2, 4, 4]
+# bob got a score of 4
+# jack got a score of 2
+# dick got a score of 4
+# willie got a score of 4
+
+# CONVERTING BETWEEN NUMBERS AND STRINGS
+
+my_string = str(100)
+print(my_string)
+print(type(my_string))
+my_int = int(my_string)
+print(my_int)
+print(type(my_int))
+
+# 100
+# <class 'str'>
+# 100
+# <class 'int'>
+
+# use float() to convert strings into floating point numbers 
+pie = float('3.14156765')
+print(pie)
+# returns 3.14156765
+
+# can use int() for converting floats as well
+
+print(int(3.1415))
+# returns 3
+
+# CONVERTING BETWEEN LISTS AND STRINGS
+
+newer_list = list('sup baby')
+print(newer_list)
+print(str(newer_list))
+# returns ['s', 'u', 'p', ' ', 'b', 'a', 'b', 'y']
+# ['s', 'u', 'p', ' ', 'b', 'a', 'b', 'y'] 
+# which is not what we want
+# need to join the elements of the list
+print(''.join(newer_list))
+print(','.join(newer_list))
+print('-'.join(newer_list))
+
+# sup baby
+# s,u,p, ,b,a,b,y
+# s-u-p- -b-a-b-y
+
+# SPLIT() METHOD FOR CONVERTING STRING INTO LIST
+
+newer_string = "Pizza Hut went downhill. Domino's reigns supreme."
+split_string = newer_string.split(',')
+print(split_string)
+# returns ["Pizza Hut went downhill. Domino's reigns supreme."]
