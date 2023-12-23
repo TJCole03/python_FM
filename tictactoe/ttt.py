@@ -1,9 +1,22 @@
 # print("suuuuuuuh")
 import random
 
-board = ["-", "-", "-",
-         "-", "-", "-",
-         "-", "-", "-",]
+board = ["-", "-", "-", "-", "-",
+         "-", "-", "-", "-", "-",
+         "-", "-", "-", "-", "-",
+         "-", "-", "-", "-", "-",
+         "-", "-", "-", "-", "-",
+         "-", "-", "-", "-", "-",]
+
+# board = ["0 ", "1 ", "2 ", "3 ", "4 ",
+#          "5 ", "6 ", "7 ", "8 ", "9 ",
+#          "10", "11", "12", "13", "14",
+#          "15", "16", "17", "18", "19",
+#          "20", "21", "22", "23", "24",
+#          "25", "26", "27", "28", "29",]
+
+#5X6
+
 currentPlayer = "X"
 winner = None
 gameRunning = True
@@ -13,11 +26,19 @@ gameRunning = True
 
 def printBoard(board):
     print("Ticky Tacky Toesy")
-    print(board[0] + " | " + board[1] + " | " + board[2])
-    print("----------")
-    print(board[3] + " | " + board[4] + " | " + board[5])
-    print("----------")
-    print(board[6] + " | " + board[7] + " | " + board[8])
+    print(board[0] + " | " + board[1] + " | " + board[2] + " | " + board[3] + " | " + board[4])
+    print("-------------------")
+    print(board[5] + " | " + board[6] + " | " + board[7] + " | " + board[8] + " | " + board[9])
+    print("-------------------")
+    print(board[10] + " | " + board[11] + " | " + board[12] + " | " + board[13] + " | " + board[14])
+    print("-------------------")
+    print(board[15] + " | " + board[16] + " | " + board[17] + " | " + board[18] + " | " + board[19])
+    print("-------------------")
+    print(board[20] + " | " + board[21] + " | " + board[22] + " | " + board[23] + " | " + board[24])
+    print("-------------------")
+    print(board[25] + " | " + board[26] + " | " + board[27] + " | " + board[28] + " | " + board[29])
+    print("-------------------")
+
 
 
 printBoard(board)
@@ -40,13 +61,22 @@ def playerInput(board):
 
 def checkHorizontal(board):
     global winner
-    if board[0] == board[1] == board[2] and board[0] != "-":
+    if board[0] == board[1] == board[2] == board[3] == board[4] and board[0] != "-":
         winner = board[0]
         return True
-    elif board[3] == board[4] == board[5] and board[3] != "-":
+    elif board[5] == board[6] == board[7] == board[8] == board[9] and board[5] != "-":
         winner = board[3]
         return True
-    elif board[6] == board[7] == board[8] and board[6] != "-":
+    elif board[10] == board[11] == board[12] == board[13] == board[14] and board[10] != "-":
+        winner = board[6]
+        return True
+    elif board[15] == board[16] == board[17] == board[18] == board[19] and board[15] != "-":
+        winner = board[6]
+        return True
+    elif board[20] == board[21] == board[22] == board[23] == board[24] and board[20] != "-":
+        winner = board[6]
+        return True
+    elif board[25] == board[26] == board[27] == board[28] == board[29] and board[25] != "-":
         winner = board[6]
         return True
 
