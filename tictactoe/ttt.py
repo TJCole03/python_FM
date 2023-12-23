@@ -44,11 +44,11 @@ def printBoard(board):
 printBoard(board)
 
 # take player input
-
+#FOR SOME REASON, '0' IS GETTING READ AS '30' IN PYTON DEBUGGER
 
 def playerInput(board):
-    inp = int(input("Enter Sandman 1-9: "))
-    if inp >= 1 and inp <= 9 and board[inp-1] == "-":
+    inp = int(input("Enter Sandman 0-29: "))
+    if inp >= 0 and inp <= 29 and board[inp-1] == "-":
         board[inp-1] = currentPlayer
     else:
         print("Getcho own square!!")
@@ -81,27 +81,27 @@ def checkHorizontal(board):
         return True
 
 
-def checkVertical(board):
-    global winner
-    if board[0] == board[3] == board[6] and board[0] != "-":
-        winner = board[0]
-        return True
-    if board[1] == board[4] == board[7] and board[1] != "-":
-        winner = board[1]
-        return True
-    if board[2] == board[5] == board[8] and board[2] != "-":
-        winner = board[2]
-        return True
+# def checkVertical(board):
+#     global winner
+#     if board[0] == board[3] == board[6] and board[0] != "-":
+#         winner = board[0]
+#         return True
+#     if board[1] == board[4] == board[7] and board[1] != "-":
+#         winner = board[1]
+#         return True
+#     if board[2] == board[5] == board[8] and board[2] != "-":
+#         winner = board[2]
+#         return True
 
 
-def checkDiag(board):
-    global winner
-    if board[0] == board[4] == board[8] and board[0] != "-":
-        winner = board[0]
-        return True
-    if board[2] == board[4] == board[6] and board[2] != "-":
-        winner = board[2]
-        return True
+# def checkDiag(board):
+#     global winner
+#     if board[0] == board[4] == board[8] and board[0] != "-":
+#         winner = board[0]
+#         return True
+#     if board[2] == board[4] == board[6] and board[2] != "-":
+#         winner = board[2]
+#         return True
 
 
 def checkTie(board):
@@ -112,8 +112,11 @@ def checkTie(board):
 
 
 def checkWin():
-    if checkDiag(board) or checkHorizontal(board) or checkVertical(board):
+    if checkHorizontal(board):
         print(f"The winner is {winner}")
+# def checkWin():
+#     if checkDiag(board) or checkHorizontal(board) or checkVertical(board):
+#         print(f"The winner is {winner}")
 
 # switch player
 
@@ -128,7 +131,7 @@ def switchPlayer():
 
 def computer(board):
     while currentPlayer == "O":
-        position = random.randint(0, 8)
+        position = random.randint(0, 29)
         if board[position] == "-":
             board[position] = "O"
             switchPlayer()
