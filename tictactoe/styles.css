@@ -1,0 +1,7 @@
+.board{
+    border: .1rem solid black;
+    border-radius: 15%;
+    display: grid;
+    grid-template-columns: 5;
+    grid-template-rows: 6;
+}
