@@ -8,12 +8,12 @@ board = ["-", "-", "-", "-", "-",
          "-", "-", "-", "-", "-",
          "-", "-", "-", "-", "-",]
 
-# board = ["0 ", "1 ", "2 ", "3 ", "4 ",
-#          "5 ", "6 ", "7 ", "8 ", "9 ",
-#          "10", "11", "12", "13", "14",
-#          "15", "16", "17", "18", "19",
-#          "20", "21", "22", "23", "24",
-#          "25", "26", "27", "28", "29",]
+# board = ["1 ", "2 ", "3 ", "4 ", "5 ",
+#          "6 ", "7 ", "8 ", "9 ", "10 ",
+#          "11", "12", "13", "14", "15",
+#          "16", "17", "18", "19", "20",
+#          "21", "22", "23", "24", "25",
+#          "26", "27", "28", "29", "0",]
 
 #5X6
 
@@ -99,16 +99,26 @@ def checkVertical(board):
         winner = board[4]
         return True
 
-#CURRENTLY NOT READING PROPER VALUES??
 
-# def checkDiag(board):
-#     global winner
-#     if board[0] == board[4] == board[8] and board[0] != "-":
-#         winner = board[0]
-#         return True
-#     if board[2] == board[4] == board[6] and board[2] != "-":
-#         winner = board[2]
-#         return True
+def checkDiag(board):
+    global winner
+    if board[1] == board[7] == board[13] == board[19] == board[25] and board[1] != "-":
+        winner = board[1]
+        return True
+    if board[6] == board[12] == board[18] == board[24] == board[0] and board[6] != "-":
+        winner = board[6]
+        return True
+    if board[5] == board[9] == board[13] == board[17] == board[21] and board[5] != "-":
+        winner = board[5]
+        return True
+    if board[10] == board[14] == board[18] == board[22] == board[26] and board[10] != "-":
+        winner = board[10]
+        return True
+    
+# 1,7,13,19,25
+# 6,12,18,24,0
+# 5,9,13,17,21
+# 10,14,18,22,26
 
 
 def checkTie(board):
@@ -119,7 +129,7 @@ def checkTie(board):
 
 
 def checkWin():
-    if checkHorizontal(board) or checkVertical(board):
+    if checkHorizontal(board) or checkVertical(board) or checkDiag(board):
         print(f"The winner is {winner}")
 # def checkWin():
 #     if checkDiag(board) or checkHorizontal(board) or checkVertical(board):
