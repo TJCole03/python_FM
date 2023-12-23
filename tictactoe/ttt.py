@@ -81,18 +81,25 @@ def checkHorizontal(board):
         return True
 
 
-# def checkVertical(board):
-#     global winner
-#     if board[0] == board[3] == board[6] and board[0] != "-":
-#         winner = board[0]
-#         return True
-#     if board[1] == board[4] == board[7] and board[1] != "-":
-#         winner = board[1]
-#         return True
-#     if board[2] == board[5] == board[8] and board[2] != "-":
-#         winner = board[2]
-#         return True
+def checkVertical(board):
+    global winner
+    if board[0] == board[5] == board[10] == board[15] == board[20] == board[25] and board[0] != "-":
+        winner = board[0]
+        return True
+    if board[1] == board[6] == board[11] == board[16] == board[21] == board[26] and board[1] != "-":
+        winner = board[1]
+        return True
+    if board[2] == board[7] == board[12] == board[17]== board[22] == board[27] and board[2] != "-":
+        winner = board[2]
+        return True
+    if board[3] == board[8] == board[13] == board[18]== board[23] == board[28] and board[3] != "-":
+        winner = board[3]
+        return True
+    if board[4] == board[9] == board[14] == board[19]== board[24] == board[29] and board[4] != "-":
+        winner = board[4]
+        return True
 
+#CURRENTLY NOT READING PROPER VALUES??
 
 # def checkDiag(board):
 #     global winner
@@ -112,7 +119,7 @@ def checkTie(board):
 
 
 def checkWin():
-    if checkHorizontal(board):
+    if checkHorizontal(board) or checkVertical(board):
         print(f"The winner is {winner}")
 # def checkWin():
 #     if checkDiag(board) or checkHorizontal(board) or checkVertical(board):
