@@ -20,3 +20,7 @@ except KeyError:
 # except:
 #     print('an exception happened')
 # print('end of program')
+
+# exception hierarchy
+# IMPORTANT: EXCEPTIONS ARE OBJECTS AND THEREFORE FOLLOW THE OBJECT HIERARCHY 
+# NEVER EVER CATCH BASE EXCEPTION
