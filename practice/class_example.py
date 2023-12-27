@@ -40,13 +40,16 @@ class Wheat(Crop):
 
 # instance of Soybeans which inherits from Crop 
 vegan_gold = Soybeans('Soybeans', 'Fabaceae', 'dicot', 'hybrid','AG005XF1')
-print(vegan_gold)
-
 print(f"{vegan_gold.variety} has been proven to grow in drought and is another formidable {vegan_gold.planttype}")
 
-print(f"My vegan gold is a {type(vegan_gold)} and my most overgrown crop is a {type(most_overgrown_crop)}")
+new_crop = Crop('Sorghum', 'Poaceae', 'Monocot', 'Hybrid', 'S. Bicolor')
+print(f"I grow {new_crop.name} in the {new_crop.family} family")
 
+print(f"My vegan gold is a {type(vegan_gold)} and my most overgrown crop is a {type(most_overgrown_crop)}")
 # My vegan gold is a <class '__main__.Soybeans'> and my most overgrown crop is a <class '__main__.Crop'>
+
+print(f"My vegan gold is a {type(vegan_gold)} and my NEW CROP is a {type(new_crop)}")
+#My vegan gold is a <class '__main__.Soybeans'> and my NEW CROP is a <class '__main__.Crop'>
 
 print(f"Is my most overgrown crop a crop?? {isinstance(most_overgrown_crop, Crop)}")
 # Is my most overgrown crop a crop?? True
@@ -57,4 +60,53 @@ print(f"is my wheat a Crop?? {isinstance(Wheat, Crop)}")
 print(f"is my Soybeans a Crop?? {isinstance(Soybeans, Crop)}")
 # is my soybeans a Crop?? False. NOT an instance of Crop
 
-print(f"is my wheat a C")
+# a = 1 / 0
+# print(a)
+
+# 2 + "3"
+# my_dict = {"hello": "world"}
+# my_dict["foo"]
+# my_dict.append("foo")
+
+# try: 
+#     new_dict = {"hey": "dude"}
+#     print(new_dict['foo'])
+# except KeyError:
+#      print("oops! the key doesn't exist :(")
+# ... oops! the key doesn't exist :(
+
+# try: 
+#     new_dict = {"hey": "dude"}
+#     print(new_dict['foo'])
+# except KeyError as key_error:
+#      print(f"oops! the key {key_error} doesn't exist :(")
+# oops! the key 'foo' doesn't exist :(
+
+
+#EXCEPTIONS
+
+try:
+     int("a")
+except ValueError:
+     print("Oops, couldn't convert that value into an int!")
+
+print("1-End of program reached")
+# Oops, couldn't convert that value into an int!
+# 1-End of program reached
+
+try:
+     int("a")
+except ValueError as error:
+     print(f"Something went wrong. Message: {error}")
+
+print("2-End of program reached")
+# Something went wrong. Message: invalid literal for int() with base 10: 'a'
+# 2-End of program reached
+
+
+class MyException(Exception):
+    def __init__(self, message):
+            new_message = f"!!!ERROR!!! {message}"
+            super().__init__(new_message)
+raise MyException("Someting went wrong")
+
