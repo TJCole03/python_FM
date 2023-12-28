@@ -54,3 +54,59 @@ except ValueError:
 # can get more information
 
 
+# dont't catch Exception. don't catch Exception. don't catch exception; it'll catch 
+# every type of exception that subclasses the Exception class. 
+# Catching BaseException is worse; it'll swallow up every type of exception including 
+# KeyboardInterrupt, which causes programs to exit when sending SIGINT
+
+
+# class MyCustomException(Exception):
+#     pass
+# raise MyCustomException()
+
+class IncorrectValueError(Exception):
+    def __init__(self, value):
+        message = f"heya hoya incorrect value of {value}"
+        super().__init__(message)
+    my_value = 99.999
+    if my_value > 100:
+        raise IncorrectValueError(my_value)
+    else:
+        print('words')
+
+# class IncorrectValueError(Exception):
+#     def __init__(self, value):
+#         message = f"heya hoya incorrect value of {value}"
+#         super().__init__(message)
+#     my_value = 99999
+#     if my_value > 100:
+#         raise IncorrectValueError(my_value)
+#     else:
+#         print('words')
+
+# >>> new_value = 99
+# >>> if new_value > 100:
+# ...     raise IncorrectValueError(my_value)
+# ... else: 
+# ...     print('word')
+# ... 
+# word
+# >>> new_value = 999
+# >>> if new_value > 100:
+# ...     raise IncorrectValueError(my_value)
+# ... else:
+# ...     print('word')
+# ... 
+# Traceback (most recent call last):
+#   File "<stdin>", line 2, in <module>
+# IncorrectValueError: incorrect value of {value}
+
+class GitHubApiException(Exception):
+
+    def __init__(self, status_code):
+        if status_code == 403:
+            message = "Rate limit reached. Please wait a minute and try again."
+        else:
+            message = f"HTTP Status Code was: {status_code}."
+
+        super().__init__(message)
