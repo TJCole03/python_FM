@@ -48,3 +48,55 @@ This is a page with info about the author. 0_0
 </article> 0_0
 {% endblock %}
 
+<!-- class based views; EXAMPLE DOWN BELOW -->
+
+<!-- URLS.PY -->
+
+from django.urls import path
+
+from blog import views
+
+urlpatterns = [
+    path("", views.index, name="posts"),
+    path("about/", views.about, name="about"),
+    path("<slug:slug>/", views.post, name="post"),
+]
+
+<!-- VIEWS.PY -->
+<!-- THESE VIEWS MAP TO URLS.PY -->
+from django.http import HttpResponse
+from django.shortcuts import get_object_or_404, render
+from django.template import loader
+
+from blog.models import Post
+
+<!-- gets a template and renders it! -->
+def about(request): 
+    template = loader.get_template("blog/about.html")
+    return HttpResponse(template.render({}, request))
+
+<!-- takes a post, getting all the objects in db, 
+    creating a context, and returning render of blog/post -->
+def index(request):
+    posts = Post.objects.all()
+    context = {"post_list": posts}
+    return render(request, "blog/post_list.html", context=context)
+
+
+def post(request, slug):
+    post = get_object_or_404(Post, slug=slug) 
+    return render(request, "blog/post_detail.html", {"post": post})
+
+<!-- FROM CLASS_BASED_VIEWS.PY -->
+
+from django.views.generic import DetailView, ListView
+
+from blog.models import Post
+
+
+class PostListView(ListView):
+    model = Post
+
+
+class PostDetailView(DetailView):
+    model = Post
